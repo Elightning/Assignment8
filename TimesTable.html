@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head lang='en'>
+    <title> Times Table </title>
+      <meta charset="utf-8">
+    
+    <!--
+    Eamon Lightning
+    eamon_lightning@student.uml.edu
+    Sound Recording Technology major; Computer Science minor.
+    Created on November 29, 2014
+
+    This html file is part of a single page web application that accepts parameters from a user via an html form and uses said parameters to construct a multiplication table dynamically using javascript. Several tables can be generated and exist simultaneously on the page. Through the use of the jQuery UI Tabs Widget, each table is displayed within its own tab. 
+     -->
+
+    <!-- Google web font used for the site's header -->
+    <link href='http://fonts.googleapis.com/css?family=Cinzel:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- css styling for the page -->
+    <link href="TimesTable.css" rel="stylesheet" type="text/css">
+
+    <!-- css styling for jQuery UI library -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+
+    <!-- standard jQuery library -->
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+
+    <!-- jQuery validation library -->
+    <script src="jquery.validate.min.js"></script>
+
+    <!-- jQuery UI library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+    <!-- main javascript code for site's dynamic behavior -->
+    <script type="text/javascript" src="TimesTable.js"></script>
+   
+
+  </head>
+
+  <body>
+
+    <!-- span tag is used for styling purposes -->
+    <header> Times <span>X</span> Table </header>
+
+    <!-- This div contains the page's static content- the form, and the instructions div. -->
+    <div id="input_info">
+
+      <!-- The form element contains six input feilds. The first four
+      accept parameters provided by the user. The fifth is a submit button, 
+      which when fired triggers the creation of a multiplication table, if the form is valid. The sixth is a button, that when pressed closes all the opened tabs on the page, thereby deleting all of the generated multiplication tables. -->
+      <form id="form" action="javascript:void(0)">
+        
+        <p>
+          <label for="rowmin">Row Min: </label>
+          <input type="text" id="rowmin" name="rowmin">
+        </p>
+        
+        <p>
+          <label for="rowmax">Row Max: </label>
+          <input type="text" id="rowmax" name="rowmax">
+        </p>
+
+        <p>
+          <label for="colmin">Column Min: </label>
+          <input type="text" id="colmin" name="colmin">
+        </p>
+
+        <p>
+          <label for="colmax">Column Max: </label>
+          <input type="text" id="colmax" name="colmax">
+        </p>
+
+        <p>
+          <input type="submit" id="submit" name="submit" value="Build Table">
+          <input type="button" id="remove_tabs" name="remove_tabs" value="Close All Tabs">
+        </p>
+
+      </form>
+
+      <!-- Provides a brief description of the site's functionality, and the rules concerning valid input that users must follow in order for a table to be generated. -->
+      <div id="instructions">
+        
+        <p>Hello, and welcome. The purpose of this website is to generate multiplication tables based on the parameters that you, the user, provide. Before a table can be built, there are a few rules that must be followed. First, only integer numbers may be entered. Second, the "Min" feilds must be less than or equal to their respective "Max" feilds. Third, you must etner a value for each feild.</p>
+
+        <p>After you've entered valid entries, hit the "Build Table" button to build your table. Your table will appear in a tab with a tab heading that matches the values you entered, which will be formatted in the following way: [rowmin value, rowmax value],[colmin value, colmax value]. To close an single tab, click the "x" in the tab's upper right-hand corner. To close all tabs, click the "Close All Tabs" button.</p>
+      
+      </div>
+    </div>
+
+    <!-- The calc div contains the expression that displays
+    in which row and column a product (table item) exists. -->
+    <p id="calc"></p>
+
+    <!-- The tabs div contains an unordered list of tab headings, and the multiplication table for each tab. The content of both is generated dynamically in the TimesTable.js file. -->
+    <div id="tabs">
+
+      <!-- This unordered list is used as a container for the tabs headings which are created when a table is generated. Tab headings allow users to select which multiplication table they wish to view if there are multiple tables opened. --> 
+      <ul id="tabs_list"></ul>
+
+      <!-- This div is used as a container for all of the multiplication tables generated dynamically. -->
+      <div id="tabs_content"></div>
+    </div>
+
+  </body>
+
+</html>

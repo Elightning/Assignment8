@@ -1,0 +1,158 @@
+/* 
+Eamon Lightning
+eamon_lightning@student.uml.edu
+Sound Recording Technology major; Computer Science minor.
+Created on November 29, 2014
+
+This css file is part of a single page web application that 
+accepts parameters from a user via an html form and uses said 
+parameters to construct a multiplication table dynamically using javascript. 
+Several tables can be generated and exist simultaneously on the page. 
+Through the use of the jQuery UI Tabs Widget, each table is displayed
+within its own tab. 
+
+This file is used to give the webpage a little more personality.
+*/
+     
+/* Sytles the 'X' in the page's header. "Cinzel" is a Google
+web font. */
+header span {
+  font-family: Cinzel, serif;
+  font-size: 47px;
+  font-weight: 100;
+}
+
+/* Adds some nice rounded edges to the nav bar, and gives it a little
+bit of depth with the use of a box-shadow. */
+header {
+  text-align: center;
+  background-color: #88FF9D;
+  border: solid 2px gray;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #B0B0B0;
+}
+
+/* Ensures that the width of the table's cells are fixed.
+Adds a subtle background color, which is a bit easier on 
+the eyes. */
+table {
+  table-layout: fixed;
+  width: 0px;
+  background-color: #CFE8D5;    
+} 
+
+/* Adds a border to the cells of the table so that the 
+content of table is more visually organized. */
+td, th {
+  border: thin solid gray;
+  width: 80px;
+  text-align: center;
+  background-color: white;
+}
+
+/* Adds some space between the values expected in the input
+feilds, and the feilds themselves. */
+label {
+  display: inline-block;
+  width: 6em;
+  margin: 5px;
+}
+
+/* Positions errors to the right of the input feilds, and prints
+the messages in red font. */
+label.error {
+  position: relative;
+  width: 22em;
+  color: red;
+  margin-left: 1em;
+}
+
+/* Add some space between the form's buttons. */
+#submit {
+  margin-right: 10px;
+}
+
+/* Prevent form from extending too far. */
+form {
+  font-size: 15px;
+  width: 39em;;
+  position: absolute;
+  left: auto;
+}
+
+/* Used to make the content of the leftmost column 
+and the uppermost row stand out from the table's body. */
+.frame {
+  color: blue;
+  font-weight: bold;
+}
+
+/* Changes the appearance of the <td> element that the cursor
+hovers over. This makes it visually easier for a user to lock 
+in on a single cell. */
+.cell:hover {
+  color: white;
+  background-color: #A0A0A0;
+  cursor: default;
+}
+
+/* Increases the spacing between the header's letters to make
+them more readable. */
+header {
+  font-size: 32px;
+  font-family: times, serif;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+/* Positions the forms input instruction to the right of the 
+form. Add a solid black line between the form and the 
+instructions. */
+#instructions {
+  position: relative;
+  width: 36em;
+  left: 37.2em;
+  padding-left: 10px;
+  border-left: 1px solid black;
+}
+
+/* Add a border around the form and instructions content, and 
+adds a soft background color. */
+#input_info {
+  border: thin solid black;
+  border-radius: 6px;
+  background-color: #CDE8E1;
+  padding: 5px;
+}
+
+/* Adds a little spaces between the tabs container and the 
+input_info container. */
+#tabs {
+  position: relative;
+  top: .7em;
+}
+
+/* Positions the expression (calculation) in the center
+of the window. */
+#calc {
+  position: absolute;
+  font-size: 19px;
+}
+
+/* Ensures that the vertical scroll bar does not cause the
+layout of the page to change. */ 
+html {
+  overflow-y: scroll;
+}
+
+/* Ensures that if tables become large, the page doesn't 
+follow suit. */
+.table {
+  overflow: scroll;
+}
+
+/* Adds some margins to the page to improve readability. */
+body{
+  margin-right: 2em;
+  margin-left: 2em;
+}
